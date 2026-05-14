@@ -21,6 +21,7 @@
 - Goal: Zero-defect, root-cause-oriented engineering for bugs; test-driven engineering for new features. Think carefully; no need to rush.
 - Code: Write the simplest code possible. Keep the codebase minimal and modular.
 - Personal note: When in doubt, prefer readability over cleverness. Future-me will thank present-me.
+- Personal note: Before adding a new abstraction, ask whether a plain function would suffice. Layers of indirection are a maintenance cost.
 
 ## ARCHITECTURE PRINCIPLES (see PLAN.md)
 
@@ -38,5 +39,4 @@
 ## COGNITIVE WORKFLOW
 
 1. **ANALYZE**: Read relevant files. Do not guess.
-2. **PLAN**: Map out the logic. Identify root cause or required changes. Order changes by dependency.
-3. **EXECUTE**: Fix the cause, not the sympt
+2. **PLAN**: Map out the logic. Identify root
