@@ -15,6 +15,7 @@
 - Do not add `# type: ignore` or `# ty: ignore`; fix the underlying type issue.
 - All 5 checks are enforced in `tests.yml` on push/merge.
 - Personal note: When debugging a test failure, reproduce it in isolation with `uv run pytest path/to/test.py::test_name -v` before touching any code.
+- Personal note: Run `uv run ruff format` before every commit, not just before pushing — saves time fixing CI failures later.
 
 ## IDENTITY & CONTEXT
 
@@ -24,6 +25,7 @@
 - Personal note: When in doubt, prefer readability over cleverness. Future-me will thank present-me.
 - Personal note: Before adding a new abstraction, ask whether a plain function would suffice. Layers of indirection are a maintenance cost.
 - Personal note: Commit often with small, focused changes. A good commit message is a gift to future-me during `git bisect`.
+- Personal note: If a function exceeds ~40 lines, it's a signal to split it — not a hard rule, but a useful gut-check.
 
 ## ARCHITECTURE PRINCIPLES (see PLAN.md)
 
@@ -35,5 +37,4 @@
 - **Performance**: Use list accumulation for strings (not `+=` in loops), cache env vars at init, prefer iterative over recursive when stack depth matters.
 - **Platform-agnostic naming**: Use generic names (e.g. `PLATFORM_EDIT`) not platform-specific ones (e.g. `TELEGRAM_EDIT`) in shared code.
 - **No type ignores**: Do not add `# type: ignore` or `# ty: ignore`. Fix the underlying type issue.
-- **Complete migrations**: When moving modules, update imports to the new owner and remove old compatibility shims in the same change unless preserving a published interface is explicitly required.
-- **Maximum Test Coverage**: There should be maximum test coverage for everything, preferably live smoke test coverage
+- **Complete migrations**: When moving mo
