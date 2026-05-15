@@ -7,3 +7,4 @@ IMPORTANT: Ensure you've thoroughly reviewed the [AGENTS.md](AGENTS.md) file bef
 - Prefer `claude-3-5-sonnet-20241022` as the default model for cost/quality balance
 - Keep `.env` out of commits — double-check `.gitignore` includes it
 - Set max tokens to 2048 by default to avoid runaway costs during testing
+- Use `temperature=0.7` for creative tasks, `temperature=0` for deterministic/code tasks
